@@ -11,7 +11,7 @@ export class SneakersController {
         return this.sneakerService.findAll()
     }
 
-    @Delete(':id')
+    @Delete(':id/delete')
     delete(@Param('id') id: string) {
         return this.sneakerService.delete(id)
     }
