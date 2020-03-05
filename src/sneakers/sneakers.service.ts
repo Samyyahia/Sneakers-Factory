@@ -19,6 +19,10 @@ export class SneakersService {
         return this.sneakerModel.find().exec();
     }
 
+    async findById(id: string): Promise<Sneaker> {
+        return this.sneakerModel.findById(id).exec();
+    }
+
     async delete(id: string) {
         return this.sneakerModel.deleteOne({_id: id})
     }
