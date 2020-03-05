@@ -20,6 +20,6 @@ export class SneakersService {
     }
 
     async delete(id: string) {
-        return this.sneakerModel.deleteOne({id: id})
+        return this.sneakerModel.deleteOne({_id: id})
     }
 }
