@@ -1,6 +1,7 @@
-import {Controller, Delete, Get, Param} from '@nestjs/common';
+import {Body, Controller, Delete, Get, Param, Post} from '@nestjs/common';
 import { SneakersService } from "./sneakers.service";
 import {Sneaker} from "./interface/sneaker.interface";
+import {CreateSneakerDto} from "./dto/createSneaker.dto";
 
 @Controller('sneakers')
 export class SneakersController {
@@ -14,6 +15,11 @@ export class SneakersController {
     @Get(':id')
     findById(@Param('id') id: string) {
         return this.sneakerService.findById(id)
+    }
+
+    @Post('create')
+    create(@Body() body: CreateSneakerDto) {
+        return this.sneakerService.create(body)
     }
 
     @Delete(':id/delete')
