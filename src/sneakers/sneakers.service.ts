@@ -1,4 +1,4 @@
-import { Model } from 'mongoose';
+import {Model, Query} from 'mongoose';
 import { Injectable, Inject } from '@nestjs/common';
 import { Sneaker } from "./interface/sneaker.interface";
 import {CreateSneakerDto} from "./dto/createSneaker.dto";
@@ -17,5 +17,9 @@ export class SneakersService {
 
     async findAll(): Promise<Sneaker[]> {
         return this.sneakerModel.find().exec();
+    }
+
+    async delete(id: string) {
+        return this.sneakerModel.deleteOne({id: id})
     }
 }

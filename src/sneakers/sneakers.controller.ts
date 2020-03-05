@@ -1,4 +1,4 @@
-import {Controller, Get} from '@nestjs/common';
+import {Controller, Delete, Get, Param} from '@nestjs/common';
 import { SneakersService } from "./sneakers.service";
 import {Sneaker} from "./interface/sneaker.interface";
 
@@ -9,5 +9,10 @@ export class SneakersController {
     @Get()
     index(): Promise<Sneaker[]> {
         return this.sneakerService.findAll()
+    }
+
+    @Delete(':id')
+    delete(@Param('id') id: string) {
+        return this.sneakerService.delete(id)
     }
 }
