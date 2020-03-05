@@ -1,4 +1,4 @@
-import {Model, Query} from 'mongoose';
+import {Model} from 'mongoose';
 import { Injectable, Inject } from '@nestjs/common';
 import { Sneaker } from "./interface/sneaker.interface";
 import {CreateSneakerDto} from "./dto/createSneaker.dto";
